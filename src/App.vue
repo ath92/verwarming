@@ -1,18 +1,16 @@
 <template>
-  <div id="app">
-    <h1>Hey</h1>
+  <div id="vue-app">
+    <vue-header />
+    <section>iets</section>
+    <footer>iets anders</footer>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
-
+import VueHeader from './components/header';
 export default {
-  mounted() {
-    axios.get('https://us-central1-eastwatch-verwarming.cloudfunctions.net/getTemperatureOverrides')
-    .then(response => {
-      console.log(response);
-    });
+  components: {
+    VueHeader,
   }
 }
 </script>
@@ -25,7 +23,12 @@ html, body {
   padding: 0;
 }
 
-#app {
+header {
+  width: 100%;
+  text-align: center;
+}
+
+#vue-app {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   width: 100%;
   height: 100%;
